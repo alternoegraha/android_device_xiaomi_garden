@@ -19,10 +19,10 @@
     <!-- Height of the status bar.
          Do not read this dimen directly. Use {@link SystemBarUtils#getStatusBarHeight} instead.
          -->
-    <dimen name="status_bar_height_default">80.0px</dimen>
+    <dimen name="status_bar_height_default">50.0px</dimen>
 
     <!-- Height of the status bar in portrait -->
-    <dimen name="status_bar_height_portrait">80.0px</dimen>
+    <dimen name="status_bar_height_portrait">50.0px</dimen>
 
     <!-- Height of the status bar in landscape -->
     <dimen name="status_bar_height_landscape">24dp</dimen>
