@@ -52,10 +52,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay \
-    $(DEVICE_PATH)/overlay-lineage \
-    $(DEVICE_PATH)/overlay-nad
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay-lineage
+PRODUCT_PACKAGES += \
+    BatteryHealthOverlay \
+    FPSInfoOverlay \
+    FrameworksResOverlay \
+    NotchBarKiller \
+    ScreenRecordOverlay \
+    SystemUIOverlay \
+    TetheringConfigOverlay \
+    WifiOverlay \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -72,10 +78,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/dt2w/dt2w_event:$(TARGET_COPY_OUT_SYSTEM)/bin/dt2w_event
-
-# Battery
-PRODUCT_PACKAGES += \
-    BatteryHealthOverlay
 
 # Fstab
 PRODUCT_COPY_FILES += \
@@ -143,23 +145,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += InProcessNetworkStack
 PRODUCT_PACKAGES += com.android.tethering.inprocess
 
-# WiFi
-PRODUCT_PACKAGES += \
-    WifiOverlay \
-    TetheringConfigOverlay
-
 # Camera
 PRODUCT_PACKAGES += \
     Graphene
-
-# SystemUI
-PRODUCT_PACKAGES += \
-    ScreenRecordOverlay \
-    FPSInfoOverlay
-
-# IORap
-PRODUCT_PRODUCT_PROPERTIES += \
-     ro.iorapd.enable=true
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -169,10 +157,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/keylayout/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl \
     $(DEVICE_PATH)/configs/keylayout/uinput-focaltech.kl:system/usr/keylayout/uinput-focaltech.kl
-
-# Cutout
-PRODUCT_PACKAGES += \
-    NotchBarKiller
 
 # Screen density
 PRODUCT_AAPT_CONFIG := xhdpi
