@@ -53,8 +53,12 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay \
     $(DEVICE_PATH)/overlay-lineage
+
+# System Overlays
+PRODUCT_PACKAGES += \
+    FrameworksResOverlay \
+    SystemUIOverlay
 
 # Ramdisk
 PRODUCT_PACKAGES += \
